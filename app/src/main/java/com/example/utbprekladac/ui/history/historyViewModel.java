@@ -10,7 +10,7 @@ public class historyViewModel extends ViewModel {
 
     public historyViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("Posledni prelozena polozka");
     }
 
     public LiveData<String> getText() {

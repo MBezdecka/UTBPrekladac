@@ -1,5 +1,7 @@
 package com.example.utbprekladac.ui.home;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +28,9 @@ import com.example.utbprekladac.pojo.ApiResponse;
 import com.example.utbprekladac.pojo.ResponseData;
 import com.example.utbprekladac.MainActivity;
 import com.squareup.moshi.Moshi;
+
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -145,6 +150,15 @@ public class TranslatedFragment extends Fragment implements AdapterView.OnItemSe
                 Log.v("MYAPP", data.responseData.translatedText);
                 binding.txtOutput.setText(data.responseData.translatedText);
                 binding.progressBar.setVisibility(View.GONE);
+                try {
+                FileOutputStream fileout=getActivity().openFileOutput("history.txt", MODE_PRIVATE);
+                OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                outputWriter.write(data.toString());
+                outputWriter.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
 
             @Override
