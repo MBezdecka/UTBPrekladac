@@ -75,7 +75,7 @@ public class TranslatedFragment extends Fragment implements AdapterView.OnItemSe
 
         Spinner spinner_F = view.findViewById(R.id.spinnerF);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.lang, android.R.layout.simple_spinner_item);
+                R.array.langF, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_F.setAdapter(adapter);
         spinner_F.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
@@ -93,9 +93,10 @@ public class TranslatedFragment extends Fragment implements AdapterView.OnItemSe
         });
 
         Spinner spinner_T = view.findViewById(R.id.spinnerT);
-
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.langT, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_T.setAdapter(adapter);
+        spinner_T.setAdapter(adapter2);
         spinner_T.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         spinner_T.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -153,7 +154,7 @@ public class TranslatedFragment extends Fragment implements AdapterView.OnItemSe
                 try {
                 FileOutputStream fileout=getActivity().openFileOutput("history.txt", MODE_PRIVATE);
                 OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-                outputWriter.write(data.toString());
+                outputWriter.write(data.responseData.translatedText);
                 outputWriter.close();
                 } catch (Exception e) {
                     e.printStackTrace();

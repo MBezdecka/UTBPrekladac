@@ -8,10 +8,18 @@
     <string name="txtinput_hint">text for translation</string>
     <string name="btn_translate_text">Translate</string>
 
-    <string-array name="lang">
+    <string-array name="langF">
         <item>cs</item>
         <item>it</item>
         <item>en</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+
+    <string-array name="langT">
+        <item>en</item>
+        <item>it</item>
+        <item>cs</item>
         <item>de</item>
         <item>fr</item>
     </string-array>

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.example.utbprekladac.R;
 import com.example.utbprekladac.databinding.FragmentHistoryBinding;
 
 import java.io.FileInputStream;
@@ -30,6 +31,7 @@ public class HistoryFragment extends Fragment {
 
         binding = FragmentHistoryBinding .inflate(inflater, container, false);
         View root = binding.getRoot();
+        textmsg =(EditText)root.findViewById(R.id.editText1);
         binding.btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
