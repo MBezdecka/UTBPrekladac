@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">UTBPrekladac</string>
+    <string name="title_home">Prekladac</string>
+    <string name="title_dashboard">Historie</string>
+
+    <string name="hello_first_fragment">Prekladac</string>
+    <string name="hello_second_fragment">Historie</string>
+    <string name="txtinput_hint">text for translation</string>
+    <string name="btn_translate_text">Translate</string>
+
+    <string-array name="lang">
+        <item>cs</item>
+        <item>it</item>
+        <item>en</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+
+</resources>
